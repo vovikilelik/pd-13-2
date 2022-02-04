@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная страница</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
@@ -11,19 +11,19 @@
 
     <h1>Поиск постов</h1>
 
-    <form action="post_by_tag.html">
+    <form action="/tag">
         <p>По тегу</p>
         <select name="tag" >
-                <option value="еда">еда</option>
-                <option value="природа">природа</option>
-                <option value="вечеринка">вечеринка</option>
+            {% for tag in tags %}
+                <option value="{{ tag }}">{{ tag }}</option>
+            {% endfor %}
         </select>
-        <input type="submit" value="Найти" class="button">
+        <button type="submit" class="button">Найти</button>
     </form>
 
     <hr>
 
-    <a href="post_form.html" class="button">Добавить пост</a>
+    <a href="/post" class="button">Добавить пост</a>
 
 </main>
 </body>
